@@ -1,7 +1,13 @@
 <template>
   <v-app>
     <v-main>
-      <Home />
+      <v-container class="grey lighten-5 size">
+        <v-row no-gutters align="center">
+          <v-col>
+            <Home />
+          </v-col>
+        </v-row>
+      </v-container>
     </v-main>
   </v-app>
 </template>
@@ -18,4 +24,10 @@ export default {
 }
 </script>
 
-<style lang="scss"></style>
+<style lang="scss">
+.size {
+  max-width: 1280px;
+  min-width: none;
+  height: 100%;
+}
+</style>
