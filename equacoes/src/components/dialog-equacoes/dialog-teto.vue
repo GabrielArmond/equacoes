@@ -10,7 +10,7 @@
     </v-toolbar>
     <v-row align="center">
       <v-col class="text-center">
-        <h3 class="pt-5">d = √4/π×(P/σ_adm )</h3></v-col
+        <h3 class="pt-5">h = 1/(π × d_parafuso) × (P/τ_adm )</h3></v-col
       >
     </v-row>
     <v-card-text>
@@ -28,26 +28,36 @@
           </v-col>
           <v-col md="6" sm="12">
             <v-text-field
-              v-model="tensaoNormal"
-              label="Tensão normal"
-              hint="Digite a tensão normal em Kilo Pascal"
+              v-model="diametroArruela"
+              label="Diâmetro da arruela"
+              hint="Digite o diâmetro da arruela em milimetro"
               persistent-hint
               filled
               dense
             ></v-text-field>
           </v-col>
-          <v-row justify="center">
-            <v-col cols="6">
-              <v-text-field
-                v-model="resultado"
-                label="Resultado"
-                suffix="mm"
-                filled
-                dense
-                readonly
-              ></v-text-field>
-            </v-col>
-          </v-row>
+          <v-col md="10" sm="12">
+            <v-text-field
+              v-model="tensaoCisalhamento"
+              label="Tensão de cisalhamento do material (teto)"
+              hint="Digite a tensão de cisalhamento em Kilo Pascal"
+              persistent-hint
+              filled
+              dense
+            ></v-text-field>
+          </v-col>
+        </v-row>
+        <v-row justify="center">
+          <v-col cols="6">
+            <v-text-field
+              v-model="resultado"
+              label="Resultado"
+              suffix="mm"
+              filled
+              dense
+              readonly
+            ></v-text-field>
+          </v-col>
         </v-row>
       </div>
     </v-card-text>
@@ -71,7 +81,8 @@ export default {
   data() {
     return {
       forca: null,
-      tensaoNormal: null,
+      diametroArruela: null,
+      tensaoCisalhamento: null,
       resultado: null
     }
   },
@@ -81,14 +92,17 @@ export default {
     },
     calcular() {
       const forca = this.forca
-      const tensaoNormal = this.tensaoNormal
-      const diametroParafuso = Math.sqrt((4 / Math.PI) * (forca / tensaoNormal))
-      const diametroMM = (diametroParafuso * 1000).toFixed(2)
-      this.resultado = `${diametroMM} mm`
+      const diametroArruela = this.diametroArruela
+      const tensaoCisalhamento = this.tensaoCisalhamento
+      const espessura =
+        (1 / (Math.PI * diametroArruela)) * (forca / tensaoCisalhamento)
+      const espessuraMM = (espessura * 1000).toFixed(2)
+      this.resultado = espessuraMM
     },
     limparCampos() {
       this.forca = null
-      this.tensaoNormal = null
+      this.tensaoCisalhamento = null
+      this.diametroArruela = null
       this.resultado = null
     }
   }
