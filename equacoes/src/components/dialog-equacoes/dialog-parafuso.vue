@@ -21,6 +21,7 @@
               v-model="forca"
               label="Força"
               hint="Digite a força em Kilo Newton"
+              suffix="N"
               persistent-hint
               filled
               dense
@@ -31,6 +32,7 @@
               v-model="tensaoNormal"
               label="Tensão normal"
               hint="Digite a tensão normal em Kilo Pascal"
+              suffix="Pa"
               persistent-hint
               filled
               dense
@@ -39,8 +41,8 @@
           <v-row justify="center">
             <v-col cols="6">
               <v-text-field
-                v-model="resultado"
-                label="Resultado"
+                v-model="diametroParafuso"
+                label="Diâmetro parafuso"
                 suffix="mm"
                 filled
                 dense
@@ -50,6 +52,17 @@
           </v-row>
         </v-row>
       </div>
+    </v-card-text>
+    <v-card-text>
+      <v-row class="text-center">
+        <v-col md="12" sm="12">
+          <span class="text-h6"> Resolução da equação:</span>
+          <p>
+            {{ diametroParafuso || 'd' }} = √4/π x ({{ forca || 'P' }} /
+            {{ tensaoNormal || 'σ_adm' }})
+          </p>
+        </v-col>
+      </v-row>
     </v-card-text>
     <v-card-actions class="justify-end">
       <v-btn color="error" @click="limparCampos">Limpar campos</v-btn>
@@ -72,7 +85,7 @@ export default {
     return {
       forca: null,
       tensaoNormal: null,
-      resultado: null
+      diametroParafuso: null
     }
   },
   methods: {
@@ -84,12 +97,12 @@ export default {
       const tensaoNormal = this.tensaoNormal
       const diametroParafuso = Math.sqrt((4 / Math.PI) * (forca / tensaoNormal))
       const diametroMM = (diametroParafuso * 1000).toFixed(2)
-      this.resultado = `${diametroMM} mm`
+      this.diametroParafuso = diametroMM
     },
     limparCampos() {
       this.forca = null
       this.tensaoNormal = null
-      this.resultado = null
+      this.diametroParafuso = null
     }
   }
 }

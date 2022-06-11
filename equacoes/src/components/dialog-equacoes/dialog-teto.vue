@@ -21,6 +21,7 @@
               v-model="forca"
               label="Força"
               hint="Digite a força em Kilo Newton"
+              suffix="N"
               persistent-hint
               filled
               dense
@@ -31,16 +32,18 @@
               v-model="diametroArruela"
               label="Diâmetro da arruela"
               hint="Digite o diâmetro da arruela em milimetro"
+              suffix="mm"
               persistent-hint
               filled
               dense
             ></v-text-field>
           </v-col>
-          <v-col md="10" sm="12">
+          <v-col md="12" sm="12">
             <v-text-field
               v-model="tensaoCisalhamento"
               label="Tensão de cisalhamento do material (teto)"
               hint="Digite a tensão de cisalhamento em Kilo Pascal"
+              suffix="Pa"
               persistent-hint
               filled
               dense
@@ -50,8 +53,8 @@
         <v-row justify="center">
           <v-col cols="6">
             <v-text-field
-              v-model="resultado"
-              label="Resultado"
+              v-model="espessuraTeto"
+              label="Espessura teto"
               suffix="mm"
               filled
               dense
@@ -60,6 +63,18 @@
           </v-col>
         </v-row>
       </div>
+    </v-card-text>
+    <v-card-text>
+      <v-row class="text-center">
+        <v-col md="12" sm="12">
+          <span class="text-h6"> Resolução da equação:</span>
+          <p>
+            {{ espessuraTeto || 'h' }} = 1/(π ×
+            {{ diametroArruela || 'd_arruela' }}) × ( {{ forca || 'P' }}/
+            {{ tensaoCisalhamento || 'τ_adm' }} )
+          </p>
+        </v-col>
+      </v-row>
     </v-card-text>
     <v-card-actions class="justify-end">
       <v-btn color="error" @click="limparCampos">Limpar campos</v-btn>
@@ -83,7 +98,7 @@ export default {
       forca: null,
       diametroArruela: null,
       tensaoCisalhamento: null,
-      resultado: null
+      espessuraTeto: null
     }
   },
   methods: {
@@ -97,13 +112,13 @@ export default {
       const espessura =
         (1 / (Math.PI * diametroArruela)) * (forca / tensaoCisalhamento)
       const espessuraMM = (espessura * 1000).toFixed(2)
-      this.resultado = espessuraMM
+      this.espessuraTeto = espessuraMM
     },
     limparCampos() {
       this.forca = null
       this.tensaoCisalhamento = null
       this.diametroArruela = null
-      this.resultado = null
+      this.espessuraTeto = null
     }
   }
 }

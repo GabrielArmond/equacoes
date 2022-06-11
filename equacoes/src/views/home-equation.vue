@@ -1,9 +1,8 @@
 <template>
-  <v-container class="ma-5 text-center">
-    <v-col cols="12">
-      <Header />
-      <CardEquacao @abrirDialog="abrirDialog" />
-    </v-col>
+  <div class="conteudo">
+    <Header />
+    <CardEquacao @abrirDialog="abrirDialog" />
+
     <v-dialog
       persistent
       v-model="dialog_parafuso"
@@ -33,7 +32,7 @@
         />
       </transition>
     </v-dialog>
-  </v-container>
+  </div>
 </template>
 
 <script>
@@ -70,4 +69,10 @@ export default {
 }
 </script>
 
-<style lang="scss"></style>
+<style lang="scss">
+.conteudo {
+  height: 100vh;
+  border: 1px solid gray;
+  border-radius: 20px;
+}
+</style>

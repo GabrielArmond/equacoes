@@ -1,9 +1,12 @@
 <template>
   <v-app>
-    <v-main class="blue-grey lighten-5">
-      <AppBar />
-      <v-row no-gutters align="center">
-        <v-col>
+    <v-main>
+      <v-row>
+        <v-col md="3" sm="12" class="pa-0">
+          <NavBar />
+        </v-col>
+
+        <v-col align="center" md="8" sm="12" class="pt-12">
           <Home />
         </v-col>
       </v-row>
@@ -13,13 +16,13 @@
 
 <script>
 import Home from '@/views/home-equation.vue'
-import AppBar from '@/components/app-bar.vue'
+import NavBar from '@/components/nav-bar.vue'
 
 export default {
   name: 'App',
   components: {
     Home,
-    AppBar
+    NavBar
   },
 
   data: () => ({})
@@ -27,9 +30,7 @@ export default {
 </script>
 
 <style lang="scss">
-.size {
-  max-width: 1280px;
-  min-width: none;
-  height: 100%;
+main {
+  overflow: hidden;
 }
 </style>
