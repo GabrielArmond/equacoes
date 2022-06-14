@@ -1,4 +1,3 @@
-# equacoes
 <h1>Equações de Resistencia dos materiais</h1>
 
 <p>
