@@ -9,23 +9,28 @@ Tivemos a ideia de desenvolver uma calculadora voltada para a area de Engenharia
 Observamos que não existia uma maneira acessível e de fácil compreensão para as pessoas em geral conseguirem fazer calculos de sustentação de objetos no teto, que é algo bem comum nos dias atuais. Dessa forma tivemos a ideia de desenvolver uma calculadora voltada para a área de Engenharia, mas que também fosse inclusiva no sentido de que é de fácil acesso e entendimento por grande parte das pessoas, sendo que o tópico escolhido foi: fixação de objetos no teto com parafusos (onde a calculadora desenvolvida dará a espessura do parafuso e do teto a espessura necessária, de acordo com o peso e o material estipulado).
 </p>
 
--------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-Project setup
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
+## Project setup
+```
 npm install
+```
 
-Compiles and hot-reloads for development
-
+### Compiles and hot-reloads for development
+```
 npm run serve
+```
 
-Compiles and minifies for production
-
+### Compiles and minifies for production
+```
 npm run build
+```
 
-Lints and fixes files
-
+### Lints and fixes files
+```
 npm run lint
+```
 
-Customize configuration
+### Customize configuration
+See [Configuration Reference](https://cli.vuejs.org/config/).
 
-See Configuration Reference.
