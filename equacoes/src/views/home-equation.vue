@@ -1,7 +1,8 @@
 <template>
   <div class="conteudo">
     <Header />
-    <CardEquacao @abrirDialog="abrirDialog" />
+    <CardEquacao class="pb-12" @abrirDialog="abrirDialog" />
+    <v-divider></v-divider>
 
     <v-dialog
       persistent
@@ -72,7 +73,5 @@ export default {
 <style lang="scss">
 .conteudo {
   height: 100vh;
-  border: 1px solid gray;
-  border-radius: 20px;
 }
 </style>

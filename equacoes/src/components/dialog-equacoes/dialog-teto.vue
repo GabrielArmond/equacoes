@@ -14,7 +14,7 @@
       >
     </v-row>
     <v-card-text>
-      <div class="text-h2 pa-12">
+      <div class="text-h2">
         <v-row>
           <v-col md="6" sm="12">
             <v-text-field
@@ -64,6 +64,10 @@
         </v-row>
       </div>
     </v-card-text>
+    <v-card-actions class="justify-center pb-5">
+      <v-btn color="error" @click="limparCampos">Limpar campos</v-btn>
+      <v-btn color="primary" @click="calcular">Calcular</v-btn>
+    </v-card-actions>
     <v-card-text>
       <v-row class="text-center">
         <v-col md="12" sm="12">
@@ -76,15 +80,17 @@
         </v-col>
       </v-row>
     </v-card-text>
-    <v-card-actions class="justify-end">
-      <v-btn color="error" @click="limparCampos">Limpar campos</v-btn>
-      <v-btn color="primary" @click="calcular">Calcular</v-btn>
-    </v-card-actions>
+    <v-divider></v-divider>
+    <v-card-text class="pa-5">
+      <ResolucaoEspessuraTeto />
+    </v-card-text>
   </v-card>
 </template>
 
 <script>
+import ResolucaoEspessuraTeto from './resolucao-espessura-teto.vue'
 export default {
+  components: { ResolucaoEspessuraTeto },
   name: 'DialogParafuso',
   emits: ['close'],
   props: {
