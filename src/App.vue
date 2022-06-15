@@ -2,8 +2,8 @@
   <v-app>
     <v-main>
       <v-row>
-        <v-col md="3" sm="12" class="pa-0">
-          <NavBar />
+        <v-col md="2" sm="12" class="pa-0">
+          <NavBar style="width: 100%" />
         </v-col>
 
         <v-col align="center" md="8" sm="12" class="pt-12">

@@ -27,7 +27,6 @@ export default {
 
 <style lang="scss" scoped>
 .nav-bar {
-  max-width: 350px;
   height: 100vh;
   text-align: center;
 }

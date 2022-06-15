@@ -1,6 +1,6 @@
 <template>
   <v-card class="overflow-x-hidden">
-    <v-toolbar dark>
+    <v-toolbar color="#0d3b66" dark>
       {{ titulo }}
       <v-spacer></v-spacer>
 
@@ -16,7 +16,7 @@
     <v-card-text>
       <div class="text-h2 px-2">
         <v-row>
-          <v-col md="6" sm="12">
+          <v-col cols="12" md="6" sm="12">
             <v-text-field
               v-model="forca"
               label="Força"
@@ -27,7 +27,7 @@
               dense
             ></v-text-field>
           </v-col>
-          <v-col md="6" sm="12">
+          <v-col cols="12" md="6" sm="12">
             <v-text-field
               v-model="tensaoNormal"
               label="Tensão normal"
@@ -38,18 +38,16 @@
               dense
             ></v-text-field>
           </v-col>
-          <v-row justify="center">
-            <v-col cols="6">
-              <v-text-field
-                v-model="diametroParafuso"
-                label="Diâmetro parafuso"
-                suffix="mm"
-                filled
-                dense
-                readonly
-              ></v-text-field>
-            </v-col>
-          </v-row>
+          <v-col cols="12" md="6" sm="12">
+            <v-text-field
+              v-model="diametroParafuso"
+              label="Diâmetro parafuso"
+              suffix="mm"
+              filled
+              dense
+              readonly
+            ></v-text-field>
+          </v-col>
         </v-row>
       </div>
     </v-card-text>
@@ -59,7 +57,7 @@
     </v-card-actions>
     <v-card-text>
       <v-row class="text-center">
-        <v-col md="12" sm="12">
+        <v-col cols="12" md="12" sm="12">
           <span class="text-h6"> Resolução da equação:</span>
           <p>
             {{ diametroParafuso || 'd' }} = √4/π x ({{ forca || 'P' }} /

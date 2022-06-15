@@ -1,6 +1,6 @@
 <template>
   <v-card class="overflow-x-hidden">
-    <v-toolbar dark>
+    <v-toolbar color="#0d3b66" dark>
       {{ titulo }}
       <v-spacer></v-spacer>
 
@@ -9,14 +9,14 @@
       </v-btn>
     </v-toolbar>
     <v-row align="center">
-      <v-col class="text-center">
-        <h3 class="pt-5">h = 1/(π × d_parafuso) × (P/τ_adm )</h3></v-col
-      >
+      <v-col cols="12" md="12" sm="12" class="text-center px-5">
+        <h3 class="pt-5">h = 1/(π × d_parafuso) × (P/τ_adm )</h3>
+      </v-col>
     </v-row>
     <v-card-text>
       <div class="text-h2">
         <v-row>
-          <v-col md="6" sm="12">
+          <v-col cols="12" md="6" sm="12">
             <v-text-field
               v-model="forca"
               label="Força"
@@ -27,7 +27,7 @@
               dense
             ></v-text-field>
           </v-col>
-          <v-col md="6" sm="12">
+          <v-col cols="12" md="6" sm="12">
             <v-text-field
               v-model="diametroArruela"
               label="Diâmetro da arruela"
@@ -38,7 +38,7 @@
               dense
             ></v-text-field>
           </v-col>
-          <v-col md="12" sm="12">
+          <v-col cols="12" md="12" sm="12">
             <v-text-field
               v-model="tensaoCisalhamento"
               label="Tensão de cisalhamento do material (teto)"
@@ -51,7 +51,7 @@
           </v-col>
         </v-row>
         <v-row justify="center">
-          <v-col cols="6">
+          <v-col cols="12" md="6" sm="12">
             <v-text-field
               v-model="espessuraTeto"
               label="Espessura teto"
