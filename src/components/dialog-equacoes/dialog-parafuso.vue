@@ -31,8 +31,8 @@
             <v-text-field
               v-model="tensaoNormal"
               label="Tensão normal"
-              hint="Digite a tensão normal em Kilo Pascal"
-              suffix="kPa"
+              hint="Digite a tensão normal em Mega Pascal"
+              suffix="MPa"
               persistent-hint
               filled
               dense

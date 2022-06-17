@@ -42,8 +42,8 @@
             <v-text-field
               v-model="tensaoCisalhamento"
               label="Tensão de cisalhamento do material (suporte superior)"
-              hint="Digite a tensão de cisalhamento em Kilo Pascal"
-              suffix="kPa"
+              hint="Digite a tensão de cisalhamento em Mega Pascal"
+              suffix="MPa"
               persistent-hint
               filled
               dense
