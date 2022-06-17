@@ -6,7 +6,7 @@
           <NavBar style="width: 100%" />
         </v-col>
 
-        <v-col align="center" md="8" sm="12" class="pt-12">
+        <v-col align="center" md="10" sm="12" class="pt-12">
           <Home />
         </v-col>
       </v-row>

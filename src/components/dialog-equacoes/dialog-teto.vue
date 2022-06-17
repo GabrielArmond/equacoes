@@ -21,7 +21,7 @@
               v-model="forca"
               label="Força"
               hint="Digite a força em Kilo Newton"
-              suffix="N"
+              suffix="kN"
               persistent-hint
               filled
               dense
@@ -41,9 +41,9 @@
           <v-col cols="12" md="12" sm="12">
             <v-text-field
               v-model="tensaoCisalhamento"
-              label="Tensão de cisalhamento do material (teto)"
+              label="Tensão de cisalhamento do material (suporte superior)"
               hint="Digite a tensão de cisalhamento em Kilo Pascal"
-              suffix="Pa"
+              suffix="kPa"
               persistent-hint
               filled
               dense
@@ -54,7 +54,7 @@
           <v-col cols="12" md="6" sm="12">
             <v-text-field
               v-model="espessuraTeto"
-              label="Espessura teto"
+              label="Espessura mínima do teto"
               suffix="mm"
               filled
               dense

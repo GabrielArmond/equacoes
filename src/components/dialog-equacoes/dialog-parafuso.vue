@@ -21,7 +21,7 @@
               v-model="forca"
               label="Força"
               hint="Digite a força em Kilo Newton"
-              suffix="N"
+              suffix="kN"
               persistent-hint
               filled
               dense
@@ -32,7 +32,7 @@
               v-model="tensaoNormal"
               label="Tensão normal"
               hint="Digite a tensão normal em Kilo Pascal"
-              suffix="Pa"
+              suffix="kPa"
               persistent-hint
               filled
               dense
