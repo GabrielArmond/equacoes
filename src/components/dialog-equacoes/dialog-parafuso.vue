@@ -20,8 +20,8 @@
             <v-text-field
               v-model="forca"
               label="Força"
-              hint="Digite a força em Kilo Newton"
-              suffix="kN"
+              hint="Digite a força em Newton"
+              suffix="N"
               persistent-hint
               filled
               dense
@@ -31,8 +31,8 @@
             <v-text-field
               v-model="tensaoNormal"
               label="Tensão normal"
-              hint="Digite a tensão normal em Mega Pascal"
-              suffix="MPa"
+              hint="Digite a tensão normal em Pascal"
+              suffix="Pa"
               persistent-hint
               filled
               dense

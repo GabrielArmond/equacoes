@@ -20,8 +20,8 @@
             <v-text-field
               v-model="forca"
               label="Força"
-              hint="Digite a força em Kilo Newton"
-              suffix="kN"
+              hint="Digite a força em Newton"
+              suffix="N"
               persistent-hint
               filled
               dense
@@ -31,8 +31,8 @@
             <v-text-field
               v-model="diametroArruela"
               label="Diâmetro da arruela"
-              hint="Digite o diâmetro da arruela em milimetro"
-              suffix="mm"
+              hint="Digite o diâmetro da arruela"
+              suffix="m"
               persistent-hint
               filled
               dense
@@ -42,8 +42,8 @@
             <v-text-field
               v-model="tensaoCisalhamento"
               label="Tensão de cisalhamento do material (suporte superior)"
-              hint="Digite a tensão de cisalhamento em Mega Pascal"
-              suffix="MPa"
+              hint="Digite a tensão de cisalhamento em Pascal"
+              suffix="Pa"
               persistent-hint
               filled
               dense
